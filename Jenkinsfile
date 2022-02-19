@@ -11,9 +11,8 @@ pipeline {
         stage('SCM-Checkout') {
             steps {
                 
-                 //git 'https://github.com/rayinianji/maven-web-application.git'
-                 git 'https://github.com/MithunTechnologiesDevOps/maven-standalone-application.git'
-                 //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                  git 'https://github.com/rayinianji/maven-web-application.git'
+                 
             }
         }
 
@@ -31,7 +30,9 @@ pipeline {
         {
             steps {
 
-                sh ""
+                sh "docker --version"
+                sh "docker images"
+                
             }
 
         }
