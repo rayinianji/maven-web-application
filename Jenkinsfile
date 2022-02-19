@@ -32,6 +32,7 @@ pipeline {
 
                 sh "docker --version"
                 sh "docker images"
+                sh "docker build -t mywebapp ."
                 
             }
 
