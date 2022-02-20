@@ -40,7 +40,7 @@ pipeline {
         {
            steps{
 
-             withCredentials([usernamePassword(credentialsId: 'DockerId', passwordVariable: 'dockerpwd', usernameVariable: 'dockerid')]) {
+             withCredentials([usernamePassword(credentialsId: 'DockerId', passwordVariable: 'dockerpwd', usernameVariable: 'dockerid')])
     
               {
 
@@ -69,5 +69,5 @@ pipeline {
 
    
 
-    }
+    
 
