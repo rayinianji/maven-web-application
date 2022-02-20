@@ -29,15 +29,28 @@ pipeline {
         stage('Docker Image Build....')
         {
             steps {
-
-                sh "docker --version"
-                sh "docker images"
+                
                 sh "docker build -t mywebapp ."
                 
             }
 
         }
 
+        stage ('Push image to Docker Registry')
+        {
+           steps{
+
+             withCredentials([usernameColonPassword(credentialsId: 'DockerId', variable: 'dockerlogin')]) {
+
+               sh "docker login -u anjidockerid -p ${dockerlogin}" 
+  
+              }
+
+               sh"docker push mywebapp:5.0"              
+
+           } 
+
+        }
         /*stage ('Deplyoing in to the tomcat server')
         {
             steps{
