@@ -48,7 +48,8 @@ pipeline {
   
               }
 
-               sh "docker push anjidockerid/mywebapp:latest"              
+               sh "docker tag mywebapp anjidockerid/mywebapp"
+               sh "docker push anjidockerid/mywebapp"              
  
            } 
 
