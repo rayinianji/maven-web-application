@@ -48,7 +48,7 @@ pipeline {
   
               }
 
-               sh"docker push mywebapp:5.0"              
+               sh"docker push mywebapp:latest"              
 
            } 
 
