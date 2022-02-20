@@ -40,9 +40,11 @@ pipeline {
         {
            steps{
 
-             withCredentials([usernameColonPassword(credentialsId: 'DockerId', variable: 'dockerlogin')]) {
+             withCredentials([usernamePassword(credentialsId: 'DockerId', passwordVariable: 'dockerpwd', usernameVariable: 'dockerid')]) {
+    
+              {
 
-               sh "docker login -u anjidockerid -p ${dockerlogin}" 
+               sh "docker login -u ${dockerid} -p ${dockerpwd}" 
   
               }
 
@@ -51,6 +53,7 @@ pipeline {
            } 
 
         }
+       }
         /*stage ('Deplyoing in to the tomcat server')
         {
             steps{
