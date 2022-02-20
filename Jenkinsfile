@@ -55,6 +55,12 @@ pipeline {
 
         }
        }
+
+       post { 
+        always { 
+            cleanWs()
+        }
+    }
         /*stage ('Deplyoing in to the tomcat server')
         {
             steps{
