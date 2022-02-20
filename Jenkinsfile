@@ -48,8 +48,8 @@ pipeline {
   
               }
 
-               sh"docker push mywebapp:latest"              
-
+               sh "docker push anjidockerid/mywebapp:latest"              
+ 
            } 
 
         }
